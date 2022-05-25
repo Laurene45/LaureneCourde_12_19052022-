@@ -1,0 +1,31 @@
+.header{
+    background-color: $color-2;
+    &__icons{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+    &__icon{
+        cursor: pointer;
+        align-self: center;
+    }
+    &__copyrights{
+        color: $color-3;
+        transform: rotate(-90deg);
+        width: 191px;
+        place-self: center;
+    }
+    &__vertical{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+    }
+}
+
+.lateral{
+    width: 117px;
+    height:876px
+}
