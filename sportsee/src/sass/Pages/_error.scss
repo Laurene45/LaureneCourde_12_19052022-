@@ -1,0 +1,29 @@
+.error-page {
+    margin: auto;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto;
+    gap: 5px;
+
+    .error-code {
+        font-size: 150px;
+        font-weight: 500;
+        line-height: 211px;
+    }
+
+    .error-text {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 51px;
+    }
+
+    a {
+        color: red;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 26px;
+        margin-top: 50px;
+    }
+}

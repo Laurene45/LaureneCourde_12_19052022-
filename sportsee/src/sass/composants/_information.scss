@@ -1,0 +1,53 @@
+.information {
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px 0px #00000005;
+    gap: 15px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .info-value {
+            font-size: 20px;
+            font-weight: 700;
+
+            @include laptop {
+                font-size: 12px;
+            }
+        }
+
+        .info-title {
+            color: #74798c;
+            font-size: 14px;
+
+            @include laptop {
+                font-size: 10px;
+            }
+        }
+
+        svg {
+            width: 60px;
+            height: 60px;
+
+            @include laptop {
+                width: 45px;
+                height: 45px;
+            }
+
+            @include tablet {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+
+    @include laptop {
+        padding: 10px;
+    }
+}

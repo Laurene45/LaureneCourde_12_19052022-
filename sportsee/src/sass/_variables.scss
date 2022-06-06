@@ -9,7 +9,8 @@ $color-3: #ffffff;
 
 /*breakpoints*/
 $breakpoints: (
-    tablet-max: 768px,
-    laptop-max: 1440px,
+    laptop: 1024px,
+    laptop-l: 1440px,
+    tablet:768px,
 
 );

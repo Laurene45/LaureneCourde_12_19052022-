@@ -2,8 +2,19 @@
 
 @import "./base";
 @import "./variables";
+@import "./mixins";
 
 
 
-@import "./composants/header";
-@import "./composants/lateralBar";
+@import "./Composants/header";
+@import "./Composants/sideBar";
+@import "./Composants/activity";
+@import "./Composants/information";
+
+
+
+@import "./Pages/dashboard";
+@import "./Pages/error";
+
+
+
