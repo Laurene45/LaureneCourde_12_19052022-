@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+﻿# SportSee
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SportSee is an application for see you sport statistics, calculate calories in your meals and more. Sportsee also includes device motion sensor to monitor all of your exercise data and food nutrition in real time. 
+Get fit, look good and feel great!
 
-## Available Scripts
 
-In the project directory, you can run:
+## Technologies
 
-### `npm start`
+-   JS
+-   CSS
+-   React.js  (v18.1.0)
+-   React-router-dom (v6.3.0)
+-   Recharts (v2.1.10)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Authors
 
-The page will reload when you make changes.\
+Laurene COURDE
+
+## Project back-end (**without Docker**)
+
+### Prerequisites
+
+ - [Recommended IDE (Visual Studio
+   Code)](https://code.visualstudio.com/)
+ - [Node.js (v14.16.0)](https://nodejs.org/en/)
+ - [Yarn](https://yarnpkg.com)
+
+### Launching the project
+
+! important ! install first the server
+
+[https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
+
+-   Fork the repository
+-   Clone it on your computer.
+-   The  `yarn`  command will allow you to install the dependencies.
+-   The  `yarn dev`  command will allow you to run the micro API.
+
+## Project back-end (**with Docker**)
+
+### Prerequisites
+
+-   [Docker Desktop](https://www.docker.com/products/docker-desktop)
+
+### Starting the project
+
+-   The  `docker image build --no-cache -t micro-api .`  command will allow you to build your image.
+-   The  `docker container run --name micro-api -p 3000:3000 -dt micro-api yarn`  command will allow you to create your Docker container and run your image on port 3000.
+-   The  `docker container stop micro-api`  command will allow you to stop your micro-api.
+-   The  `docker container rm micro-api`  command will allow you to delete your micro-api container.
+
+
+## Project front-end
+
+clone the repository of SportSee front-end:
+
+`git clone https://github.com/Laurene45/LaureneCourde_12_19052022-.git`
+
+Inside this front-end repository, install dependencies:  `npm install`
+
+Launch front-end on port 3001:
+
+`npm start`
+
+During installation it will ask you to run the app on port 3001 due to port conflict.Validate by pressing "y"
+
+Front-end is now rendered at URL  `http://localhost:3001`.
+
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
