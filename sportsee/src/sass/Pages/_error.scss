@@ -1,26 +1,43 @@
 .error-page {
     margin: auto;
-    color: red;
+    color: $color-4;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Roboto;
+    margin-top: 170px;
     gap: 5px;
+    height: 900px;
+
+    @include laptop {
+        height: 780px;
+    }
+
+    @include tablet {
+        height: 619px;
+    }
 
     .error-code {
         font-size: 150px;
         font-weight: 500;
         line-height: 211px;
+
+        @include tablet {
+            font-size: 120px;
+        }
     }
 
     .error-text {
         font-size: 36px;
         font-weight: 500;
         line-height: 51px;
+
+        @include laptop {
+            font-size: 28px;
+        }
     }
 
     a {
-        color: red;
+        color: $color-4;
         font-size: 25px;
         font-weight: 500;
         line-height: 26px;

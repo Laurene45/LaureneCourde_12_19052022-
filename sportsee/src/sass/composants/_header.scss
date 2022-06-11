@@ -1,22 +1,41 @@
 .nav-bar {
     //margin: auto;
-    background-color: black;
+    background-color: $color-2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .25);
     display: flex;
     justify-content: space-between;
     height: 91px;
     align-items: center;
     padding-left: 20px;
     padding-right: 150px;
+    padding-top: 5px;
+
     @include laptop {
-    padding-right: 40px;
+        padding-right: 30px;
     }
+
+    img {
+        padding-left: 8px;
+
+        @include laptop {
+            padding-left: 0px;
+        }
+    }
+
     .nav-link {
-        display:flex;
-        color: white;
-        font-family: Roboto;
+        display: flex;
+        color: $color-3;
         font-size: 24px;
         font-weight: 500;
         text-decoration: none;
+
+        @include laptop {
+            font-size: 22px;
+        }
+
+        @include tablet {
+            font-size: 20px;
+        }
+
     }
 }
-

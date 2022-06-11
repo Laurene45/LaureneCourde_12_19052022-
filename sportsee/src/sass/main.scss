@@ -4,14 +4,13 @@
 @import "./variables";
 @import "./mixins";
 
-
-
 @import "./Composants/header";
 @import "./Composants/sideBar";
 @import "./Composants/activity";
 @import "./Composants/information";
-
-
+@import "./Composants/durationSessions";
+@import "./Composants/performance";
+@import "./Composants/score";
 
 @import "./Pages/dashboard";
 @import "./Pages/error";

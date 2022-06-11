@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 import Activity from '../../components/Activity/';
 import InformationList from '../../components/Info/InformationList';
+import DurationSessions from '../../components/DurationSessions';
+import Performance from '../../components/Performance';
+import Score from '../../components/Score';
 
 import { useNavigate } from 'react-router';
 import { API, userId } from '../../Api';
-
 
 const Dashboard = () => {
   //const params = useParams();
@@ -42,7 +44,13 @@ const Dashboard = () => {
       <div className="container">
         <article className="container-chart">
           <Activity userId={userInfo?.userId} />
+          <div className="cards-info">
+            <DurationSessions userId={userInfo?.userId} />
+            <Performance userId={parseInt(userInfo?.userId)} />
+            <Score userId={userInfo?.userId} />
+          </div>
         </article>
+
         <article className="container-information">
           <InformationList
             calorie={userInfo?.calorie}

@@ -1,0 +1,19 @@
+.radarChart {
+    background-color: $color-6;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 6px;
+
+    @include laptop {
+        width: 200px;
+        height: 200px;
+
+        svg {
+            width: 200px;
+            height: 180px;
+
+        }
+    }
+
+}

@@ -3,12 +3,25 @@
 body {
     margin: auto;
     font-family: 'Roboto', sans-serif;
-    max-width: 1440px;
+    max-width: 1440px
 }
 
 main {
     display: flex;
-    -moz-column-gap: 4.5rem;
-    column-gap: 4.5rem;
+    -moz-column-gap: 5rem;
+    column-gap: 5rem;
+}
 
+@media screen and (max-width: 1024px) {
+    main {
+        -moz-column-gap: 3rem;
+        column-gap: 3rem
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        -moz-column-gap: 2rem;
+        column-gap: 2rem
+    }
 }
