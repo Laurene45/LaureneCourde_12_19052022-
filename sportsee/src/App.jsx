@@ -20,14 +20,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Dashboard />} />
         <Route path="/error" element={<Error />} />
-
-
       </Routes>
 
       </main>
-
-   
-      
     </>
   );
 }

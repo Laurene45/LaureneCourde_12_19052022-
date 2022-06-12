@@ -27,7 +27,7 @@ const CustomTooltip = ({ active, payload }) => {
   ) : null;
 };
 
-/*@function get day number
+/** get day number
  *
  * @param {string} date
  * @returns {number} of day
@@ -44,16 +44,18 @@ const getDayNumber = (date) => {
  * @returns (bar chart <Activity/>)
  */
 
-export const Activity = (props) => {
+const Activity = ({userId}) => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    if (props.userId)
-      API.getUserActivity(props.userId).then((response) => {
+    if (userId)
+      API.getUserActivity(userId).then((response) => {
         setData(response.sessions);
       });
-  }, [props.userId]);
+  }, [userId]);
+
   if (!data) return <div>loading</div>;
+  
   return (
     <div className="activity">
       <header className="card-header">

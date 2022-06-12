@@ -4,8 +4,10 @@ axios.defaults.baseURL = 'http://localhost:3000';
 
 const getData = (url) => axios.get(url).then((response) => response.data.data);
 
+
+
 // ID user 
-export const userId = 12;
+export const userId = 18;
 
 export const API = {
   /** @function get user info from api

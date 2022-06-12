@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 
 import Activity from '../../components/Activity/';
 import InformationList from '../../components/Info/InformationList';
@@ -6,32 +6,25 @@ import DurationSessions from '../../components/DurationSessions';
 import Performance from '../../components/Performance';
 import Score from '../../components/Score';
 
-import { useNavigate } from 'react-router';
 import { API, userId } from '../../Api';
+import { dataContext } from '../../utils/ApiContext';
+
+
 
 const Dashboard = () => {
-  //const params = useParams();
-  const navigate = useNavigate();
 
-  const [userInfo, setUserInfo] = useState();
-
+  const [userInfo, setUserInfo] = useContext(dataContext);
+  
   useEffect(() => {
-    API.getUser(userId)
-      .then((res) => {
-        setUserInfo({
-          userId: res.id,
-          name: res.userInfos.firstName,
-          calorie: res.keyData.calorieCount,
-          protein: res.keyData.proteinCount,
-          glucoside: res.keyData.carbohydrateCount,
-          lipid: res.keyData.lipidCount,
-        });
-      })
-      .catch(() => {
-        navigate('/error');
+    if (userId)
+    API.getUser(userId).then((response) => {
+        setUserInfo(response.userId);
+        
       });
   }, []);
 
+  if (!userInfo) return <div>loading</div>;
+  
   return (
     <section className="main-container">
       <div className="profile">
@@ -65,3 +58,22 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+/*
+  useEffect(() => {
+        API.getUser(userID)
+            .then((res) => {
+                setUserInfo({
+                    userId: res.id,
+                    name: res.userInfos.firstName,
+                    calorie: res.keyData.calorieCount,
+                    protein: res.keyData.proteinCount,
+                    glucoside: res.keyData.carbohydrateCount,
+                    lipid: res.keyData.lipidCount,
+                })
+            })
+            .catch(() => {
+                navigate('/error')
+            })
+    }, [])
+});*/
