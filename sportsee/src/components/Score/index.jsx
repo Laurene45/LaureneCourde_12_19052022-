@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 
 
 
-/*@function  for showing score to pie chat
+/** @function  for showing score to pie chat
+ * 
  * @component
  * @param {number } userId
  * @returns( <Score/>)
@@ -26,7 +27,7 @@ const Score = ({userId}) => {
         <h1>Score</h1>
       </header>
       <div className="score-chart">
-        <PieChart width={250} height={250}>
+        <PieChart width={250} height={240}>
           <Pie
             data={[{ value: data }, { value: 1 - data }]}
             dataKey="value"

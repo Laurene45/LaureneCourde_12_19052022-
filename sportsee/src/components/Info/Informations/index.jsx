@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-/*function informations
+/** @function informations
+ * 
  * @component
  * @param {element}  icon svg
  * @param {number} value

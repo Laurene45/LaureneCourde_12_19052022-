@@ -12,7 +12,7 @@ import {
 } from 'recharts';
 import { API } from '../../Api';
 
-/*@function for tooltip
+/** @function for tooltip
  *
  * @param {*} param0
  * @returns (custom tooltip)
@@ -27,7 +27,7 @@ const CustomTooltip = ({ active, payload }) => {
   ) : null;
 };
 
-/** get day number
+/**  @function get day number
  *
  * @param {string} date
  * @returns {number} of day
@@ -38,7 +38,8 @@ const getDayNumber = (date) => {
   return objetDate.getDate();
 };
 
-/*function for showing  to bar chart activity
+/** @function for showing to bar chart activity
+ * 
  *@component
  * @param {number} userId
  * @returns (bar chart <Activity/>)
@@ -91,6 +92,7 @@ const Activity = ({userId}) => {
             tickLine={false}
             tickFormatter={getDayNumber}
           />
+          
           <YAxis
             dataKey="calories"
             axisLine={false}

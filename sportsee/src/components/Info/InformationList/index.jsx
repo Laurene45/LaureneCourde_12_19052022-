@@ -42,12 +42,12 @@ const InformationList = ({calorie, protein, lipid, glucoside,}) => {
   );
 };
 
-export default InformationList;
-
 InformationList.propTypes = {
   calorie: PropTypes.number,
   lipid: PropTypes.number,
   protein: PropTypes.number,
   glucoside: PropTypes.number,
-
+  
 };
+
+export default InformationList;

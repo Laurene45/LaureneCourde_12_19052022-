@@ -14,7 +14,7 @@ const days = {
   7: 'D',
 };
 
-/*@function get day
+/** @function get day
  *
  * @param {number} indexDay
  * @returns {string} (letter of day)
@@ -24,8 +24,9 @@ const getDay = (indexDay) => {
   return days[indexDay];
 };
 
-/*function  for showing duration session to line chart
- *@component
+/** @function for showing duration session to line chart
+ * 
+ * @component
  * @param {number} userId
  * @return  (<DurationSessions/>)
  */
@@ -50,16 +51,14 @@ const DurationSessions = ({ userId }) => {
         className="duration-chart"
         id="durationChart"
         width={250}
-        height={250}
+        height={240}
         data={data}
         margin={{
-          top: 45,
+          top: 50,
           right: 0,
           left: 5,
           bottom: 0,
         }}
-      
-       
       >
         <Line
           className="line-information"
@@ -67,8 +66,7 @@ const DurationSessions = ({ userId }) => {
           dataKey="sessionLength"
           stroke="white"
           dot={false}
-          activeDot={{ r: 3 }}
-        
+          activeDot={{ r: 3 }}     
         />
 
         <XAxis
@@ -76,10 +74,7 @@ const DurationSessions = ({ userId }) => {
           stroke="white"
           tickLine={false}
           dy={1}
-          tickFormatter={getDay}
-        
-         
-         
+          tickFormatter={getDay}       
         />
 
         <Tooltip
@@ -99,7 +94,10 @@ const DurationSessions = ({ userId }) => {
     </div>
   );
 };
+
+
 DurationSessions.propTypes = {
   userId: PropTypes.number,
 };
+
 export default DurationSessions;

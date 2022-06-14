@@ -5,10 +5,7 @@ import {
   Radar,
   RadarChart,
   PolarGrid,
-  Legend,
   PolarAngleAxis,
-  PolarRadiusAxis,
-  ResponsiveContainer,
 } from 'recharts';
 import { API } from '../../Api';
 
@@ -21,7 +18,7 @@ const kind = {
   6: 'Cardio',
 };
 
-/*@function for get kind
+/** @function for get kind
  *
  * @param {number} indexKind
  * @returns (index of kind)
@@ -31,7 +28,8 @@ const getKind = (indexKind) => {
   return kind[indexKind];
 };
 
-/*@function for  showing activity types as radar chart
+/** @function for showing activity types as radar chart
+ * 
  * @component
  * @param {number} userId
  * @returns (<Performance/>)
@@ -86,4 +84,5 @@ const Performance = ({ userId }) => {
 Performance.propTypes = {
   userId: PropTypes.number,
 };
+
 export default Performance;
