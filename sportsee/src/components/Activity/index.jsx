@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ReactComponent as Oval } from '../../assets/Oval.svg';
 import {
@@ -10,7 +10,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import { API } from '../../Api';
+import { UserContext } from '../../utils/ApiContext';
 
 /** @function for tooltip
  *
@@ -45,17 +45,11 @@ const getDayNumber = (date) => {
  * @returns (bar chart <Activity/>)
  */
 
-const Activity = ({userId}) => {
-  const [data, setData] = useState();
 
-  useEffect(() => {
-    if (userId)
-      API.getUserActivity(userId).then((response) => {
-        setData(response.sessions);
-      });
-  }, [userId]);
+const Activity = () => {
 
-  if (!data) return <div>loading</div>;
+  const {userActivity} = useContext(UserContext);
+
   
   return (
     <div className="activity">
@@ -74,7 +68,7 @@ const Activity = ({userId}) => {
       </header>
       <ResponsiveContainer aspect={4}>
         <BarChart
-          data={data}
+          data={userActivity}
           barGap={8}
           margin={{
             top: 5,
@@ -121,9 +115,6 @@ const Activity = ({userId}) => {
   );
 };
 
-Activity.propTypes = {
-  userId: PropTypes.number,
-};
 
 CustomTooltip.propTypes = {
   payload: PropTypes.array,

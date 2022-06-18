@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { API } from '../../Api';
+import React, { useContext } from 'react';
+import { UserContext } from '../../utils/ApiContext';
 
 import { LineChart, XAxis, Tooltip, Line } from 'recharts';
 
@@ -31,16 +30,10 @@ const getDay = (indexDay) => {
  * @return  (<DurationSessions/>)
  */
 
-const DurationSessions = ({ userId }) => {
+const DurationSessions = () => {
 
-  const [data, setData] = useState([]);
+  const {userDurationSession} = useContext(UserContext);
 
-  useEffect(() => {
-    if (userId)
-      API.getUserAverageSessions(userId).then((response) => {
-        setData(response.sessions);
-      });
-  }, [userId]);
 
   return (
     <div className="duration-session">
@@ -52,7 +45,7 @@ const DurationSessions = ({ userId }) => {
         id="durationChart"
         width={250}
         height={240}
-        data={data}
+        data={userDurationSession}
         margin={{
           top: 50,
           right: 0,
@@ -95,9 +88,5 @@ const DurationSessions = ({ userId }) => {
   );
 };
 
-
-DurationSessions.propTypes = {
-  userId: PropTypes.number,
-};
 
 export default DurationSessions;

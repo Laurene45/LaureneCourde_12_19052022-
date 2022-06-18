@@ -10,6 +10,7 @@
     @include laptop {
         width: 200px;
         height: 200px;
+        
     }
 
     .durationSessions__header {
@@ -30,7 +31,7 @@
     }
 
     .duration-chart {
-
+        
         @include laptop {
             svg {
                 width: 200px;
@@ -57,7 +58,7 @@
 
     .recharts-cartesian-axis-tick tspan {
         opacity: 0.5;
-        font-size: 10px;
+        font-size: 12px;
     }
 
 }

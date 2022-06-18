@@ -4,13 +4,11 @@ axios.defaults.baseURL = 'http://localhost:3000';
 
 const getData = (url) => axios.get(url).then((response) => response.data.data);
 
-
-
-// ID user 
-export const userId = 18;
+//userID
+export const userId = 12;
 
 export const API = {
-  /** @function get user info from api
+  /**@function get user info from api
    *
    * @param {number} userId
    * @returns {Object} (user info)
@@ -20,7 +18,6 @@ export const API = {
     const url = `/user/${userId}`;
     return getData(url);
   },
-
 
   /**@function get user performance
    *
@@ -32,7 +29,6 @@ export const API = {
     const url = `user/${userId}/performance`;
     return getData(url);
   },
-  
 
   /**@function get user activity
    *
@@ -45,15 +41,16 @@ export const API = {
     return getData(url);
   },
 
-
   /**@function get user average sessions
    *
    * @param {number} userId
    * @returns {object}( user average sessions)
    */
-  
+
   getUserAverageSessions: (userId) => {
     const url = `user/${userId}/average-sessions`;
     return getData(url);
   },
 };
+
+

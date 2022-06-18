@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import { UserContext } from '../../utils/ApiContext';
+
 import {
   Radar,
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
 } from 'recharts';
-import { API } from '../../Api';
+
 
 const kind = {
   1: 'Intensité',
@@ -35,23 +35,11 @@ const getKind = (indexKind) => {
  * @returns (<Performance/>)
  */
 
-const Performance = ({ userId }) => {
-  const navigate = useNavigate();
-  const [data, setData] = useState();
-  useEffect(() => {
-    if (userId) {
-      API.getUserPerformance(userId)
-        .then((response) => {
-          setData(response.data);
-        })
-        .catch(() => {
-          navigate('/error');
-        });
-    }
-  }, [userId]);
+const Performance = () => {
 
-  if (!data) return <div>loading</div>;
+  const {userPerformance} = useContext(UserContext);
 
+ 
   return (
     <div className="radarChart">
       <RadarChart
@@ -61,7 +49,7 @@ const Performance = ({ userId }) => {
         outerRadius="80%"
         width={250}
         height={220}
-        data={data}
+        data={userPerformance}
         stroke="#FFFFFF"
       >
         <PolarGrid radialLines={false} d={0} />
@@ -81,8 +69,6 @@ const Performance = ({ userId }) => {
   );
 };
 
-Performance.propTypes = {
-  userId: PropTypes.number,
-};
+
 
 export default Performance;

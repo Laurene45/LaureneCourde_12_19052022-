@@ -5,15 +5,16 @@
     flex-direction: column;
     align-items: center;
     margin-top: 170px;
-    gap: 5px;
-    height: 900px;
+    margin-left: 200px;
+    gap: 10px;
+    height: 600px;
 
     @include laptop {
-        height: 780px;
+        margin-left: 150px;
     }
 
     @include tablet {
-        height: 619px;
+        margin-left: 10px;
     }
 
     .error-code {

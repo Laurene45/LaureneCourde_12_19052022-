@@ -1,25 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
-import { API } from '../../Api';
-import PropTypes from 'prop-types';
+import { UserContext } from '../../utils/ApiContext';
 
 
 
 /** @function  for showing score to pie chat
  * 
  * @component
- * @param {number } userId
  * @returns( <Score/>)
  */
 
-const Score = ({userId}) => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    if (userId)
-      API.getUser(userId).then((res) => {
-        setData(res.score || res.todayScore);
-      });
-  }, [userId]);
+const Score = () => {
+
+  const {userScore} = useContext(UserContext);
+  
 
   return (
     <div className="score">
@@ -29,7 +23,7 @@ const Score = ({userId}) => {
       <div className="score-chart">
         <PieChart width={250} height={240}>
           <Pie
-            data={[{ value: data }, { value: 1 - data }]}
+            data={[{ value: userScore }, { value: 1 - userScore }]}
             dataKey="value"
             innerRadius={70}
             outerRadius={80}
@@ -43,7 +37,7 @@ const Score = ({userId}) => {
           </Pie>
         </PieChart>
         <div className="score-info">
-          <div className="score-value">{data * 100}%</div>
+          <div className="score-value">{userScore * 100}%</div>
           <div className="score-text">de votre objectif</div>
           
         </div>
@@ -52,8 +46,5 @@ const Score = ({userId}) => {
   );
 };
 
-Score.propTypes = {
-  userId: PropTypes.number,
-};
 
 export default Score;

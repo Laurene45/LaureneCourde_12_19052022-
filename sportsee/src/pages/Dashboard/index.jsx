@@ -1,29 +1,25 @@
-import React, { useEffect, useContext } from 'react';
 
 import Activity from '../../components/Activity/';
 import InformationList from '../../components/Info/InformationList';
 import DurationSessions from '../../components/DurationSessions';
 import Performance from '../../components/Performance';
 import Score from '../../components/Score';
+import React, { useContext,} from 'react';
+import { UserContext } from '../../utils/ApiContext';
+import PropTypes from 'prop-types';
 
-import { API, userId } from '../../Api';
-import { dataContext } from '../../utils/ApiContext';
-
+/** @function for showing  dashboard  to page
+ * 
+ * @component
+ * @param UserContext
+ * @param {number} userId
+ * @returns (<Dashboard/>)
+ */
 
 
 const Dashboard = () => {
-
-  const [userInfo, setUserInfo] = useContext(dataContext);
   
-  useEffect(() => {
-    if (userId)
-    API.getUser(userId).then((response) => {
-        setUserInfo(response.userId);
-        
-      });
-  }, []);
-
-  if (!userInfo) return <div>loading</div>;
+  const {userInfo} = useContext(UserContext); 
   
   return (
     <section className="main-container">
@@ -54,26 +50,12 @@ const Dashboard = () => {
         </article>
       </div>
     </section>
+    
   );
 };
 
-export default Dashboard;
+Dashboard.propTypes = {
+  userId: PropTypes.number,
+};
 
-/*
-  useEffect(() => {
-        API.getUser(userID)
-            .then((res) => {
-                setUserInfo({
-                    userId: res.id,
-                    name: res.userInfos.firstName,
-                    calorie: res.keyData.calorieCount,
-                    protein: res.keyData.proteinCount,
-                    glucoside: res.keyData.carbohydrateCount,
-                    lipid: res.keyData.lipidCount,
-                })
-            })
-            .catch(() => {
-                navigate('/error')
-            })
-    }, [])
-});*/
+export default Dashboard;
