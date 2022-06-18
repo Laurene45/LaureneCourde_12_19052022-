@@ -2,18 +2,14 @@ import React, { useContext } from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 import { UserContext } from '../../utils/ApiContext';
 
-
-
 /** @function  for showing score to pie chat
- * 
+ *
  * @component
  * @returns( <Score/>)
  */
 
 const Score = () => {
-
-  const {userScore} = useContext(UserContext);
-  
+  const { userScore } = useContext(UserContext);
 
   return (
     <div className="score">
@@ -39,12 +35,10 @@ const Score = () => {
         <div className="score-info">
           <div className="score-value">{userScore * 100}%</div>
           <div className="score-text">de votre objectif</div>
-          
         </div>
       </div>
     </div>
   );
 };
-
 
 export default Score;

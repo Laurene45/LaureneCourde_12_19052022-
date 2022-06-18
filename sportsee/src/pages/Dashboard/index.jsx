@@ -1,26 +1,23 @@
-
 import Activity from '../../components/Activity/';
 import InformationList from '../../components/Info/InformationList';
 import DurationSessions from '../../components/DurationSessions';
 import Performance from '../../components/Performance';
 import Score from '../../components/Score';
-import React, { useContext,} from 'react';
+import React, { useContext } from 'react';
 import { UserContext } from '../../utils/ApiContext';
 import PropTypes from 'prop-types';
 
 /** @function for showing  dashboard  to page
- * 
+ *
  * @component
  * @param UserContext
  * @param {number} userId
  * @returns (<Dashboard/>)
  */
 
-
 const Dashboard = () => {
-  
-  const {userInfo} = useContext(UserContext); 
-  
+  const { userInfo } = useContext(UserContext);
+
   return (
     <section className="main-container">
       <div className="profile">
@@ -50,7 +47,6 @@ const Dashboard = () => {
         </article>
       </div>
     </section>
-    
   );
 };
 

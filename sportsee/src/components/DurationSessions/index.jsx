@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../utils/ApiContext';
-
 import { LineChart, XAxis, Tooltip, Line } from 'recharts';
 
 const days = {
@@ -24,16 +23,14 @@ const getDay = (indexDay) => {
 };
 
 /** @function for showing duration session to line chart
- * 
+ *
  * @component
  * @param {number} userId
  * @return  (<DurationSessions/>)
  */
 
 const DurationSessions = () => {
-
-  const {userDurationSession} = useContext(UserContext);
-
+  const { userDurationSession } = useContext(UserContext);
 
   return (
     <div className="duration-session">
@@ -59,7 +56,7 @@ const DurationSessions = () => {
           dataKey="sessionLength"
           stroke="white"
           dot={false}
-          activeDot={{ r: 3 }}     
+          activeDot={{ r: 3 }}
         />
 
         <XAxis
@@ -67,7 +64,7 @@ const DurationSessions = () => {
           stroke="white"
           tickLine={false}
           dy={1}
-          tickFormatter={getDay}       
+          tickFormatter={getDay}
         />
 
         <Tooltip
@@ -87,6 +84,5 @@ const DurationSessions = () => {
     </div>
   );
 };
-
 
 export default DurationSessions;

@@ -1,13 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../utils/ApiContext';
-
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-} from 'recharts';
-
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 
 const kind = {
   1: 'Intensité',
@@ -29,17 +22,15 @@ const getKind = (indexKind) => {
 };
 
 /** @function for showing activity types as radar chart
- * 
+ *
  * @component
  * @param {number} userId
  * @returns (<Performance/>)
  */
 
 const Performance = () => {
+  const { userPerformance } = useContext(UserContext);
 
-  const {userPerformance} = useContext(UserContext);
-
- 
   return (
     <div className="radarChart">
       <RadarChart
@@ -68,7 +59,5 @@ const Performance = () => {
     </div>
   );
 };
-
-
 
 export default Performance;

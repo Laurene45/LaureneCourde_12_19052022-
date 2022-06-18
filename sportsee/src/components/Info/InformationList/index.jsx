@@ -6,18 +6,16 @@ import { ReactComponent as Lipide } from '../../../assets/icons/lipide.svg';
 import { ReactComponent as Glucide } from '../../../assets/icons/glucide.svg';
 import PropTypes from 'prop-types';
 
-
 //affiche toutes les étiquettes calories/protéines/glucides/lipides
-const InformationList = ({calorie, protein, lipid, glucoside,}) => {
-
-  const cal = new Intl.NumberFormat('en-US',{style: 'decimal'}).format(calorie);
+const InformationList = ({ calorie, protein, lipid, glucoside }) => {
+  const cal = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(calorie);
 
   return (
     <>
       <Informations
         icon={<Calorie />}
         title="Calories"
-        value= {cal}
+        value={cal}
         unit="kCal"
       />
       <Informations
@@ -47,7 +45,6 @@ InformationList.propTypes = {
   lipid: PropTypes.number,
   protein: PropTypes.number,
   glucoside: PropTypes.number,
-  
 };
 
 export default InformationList;

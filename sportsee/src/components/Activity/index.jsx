@@ -39,18 +39,15 @@ const getDayNumber = (date) => {
 };
 
 /** @function for showing to bar chart activity
- * 
+ *
  *@component
  * @param {number} userId
  * @returns (bar chart <Activity/>)
  */
 
-
 const Activity = () => {
+  const { userActivity } = useContext(UserContext);
 
-  const {userActivity} = useContext(UserContext);
-
-  
   return (
     <div className="activity">
       <header className="card-header">
@@ -86,7 +83,7 @@ const Activity = () => {
             tickLine={false}
             tickFormatter={getDayNumber}
           />
-          
+
           <YAxis
             dataKey="calories"
             axisLine={false}
@@ -114,7 +111,6 @@ const Activity = () => {
     </div>
   );
 };
-
 
 CustomTooltip.propTypes = {
   payload: PropTypes.array,

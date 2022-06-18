@@ -6,8 +6,6 @@ import { ReactComponent as BodyBuildIcon } from '../../assets/BodyBuildIcon.svg'
 import { ReactComponent as BycIcon } from '../../assets/BycIcon.svg';
 import { Link } from 'react-router-dom';
 
-
-
 const SideBar = () => {
   return (
     <aside className="side-bar">
