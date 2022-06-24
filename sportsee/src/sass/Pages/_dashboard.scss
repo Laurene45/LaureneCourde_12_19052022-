@@ -1,6 +1,10 @@
 .main-container {
     padding: 10px;
 
+    @include laptop {
+        padding : 8px;
+    }
+
     @include tablet {
         padding: 0px;
         padding-top: 15px;
