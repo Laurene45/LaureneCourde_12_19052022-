@@ -24,7 +24,6 @@ const getKind = (indexKind) => {
 /** @function for showing activity types as radar chart
  *
  * @component
- * @param {number} userId
  * @returns (<Performance/>)
  */
 

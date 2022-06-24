@@ -6,7 +6,7 @@ import { ReactComponent as Lipide } from '../../../assets/icons/lipide.svg';
 import { ReactComponent as Glucide } from '../../../assets/icons/glucide.svg';
 import PropTypes from 'prop-types';
 
-//affiche toutes les étiquettes calories/protéines/glucides/lipides
+//show informations : calorie, protein, lipid, glucoside
 const InformationList = ({ calorie, protein, lipid, glucoside }) => {
   const cal = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(calorie);
 

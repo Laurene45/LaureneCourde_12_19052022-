@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import { API, userId } from '../Api';
 import Error from '../pages/Error';
 
-/**
- * Defines methods to get user data
+/** Defines methods to get user data
  *
  * @param UserContext create the context
  */
@@ -22,7 +21,7 @@ export const UserProvider = ({ children }) => {
   const [userScore, setUserScore] = useState(null);
   const [error, setError] = useState(null);
 
-  // @ functions au chargement des données users  + graphiques
+  // functions load users data + graphs
   const loadUserInfo = () => {
     return API.getUser(userId);
   };
@@ -43,7 +42,7 @@ export const UserProvider = ({ children }) => {
     return API.getUser(userId);
   };
 
-  // Charge les données
+  // load data
   useEffect(() => {
     Promise.all([
       loadUserInfo(),
@@ -53,7 +52,7 @@ export const UserProvider = ({ children }) => {
       loadScore(),
     ])
 
-      // Affiche les données
+      // show data
       .then((data) => {
         const userInfo = data[0];
         const userActivity = data[1];
@@ -91,8 +90,8 @@ export const UserProvider = ({ children }) => {
       });
   }, []);
 
-  if (!userInfo && !loading) return <div>{<Error />}</div>;
-  if (!userInfo && loading) return <div>Loading</div>;
+  if (error && !loading) return <div>{<Error />}</div>;
+  if (loading) return <div>Loading</div>;
 
   return (
     <UserContext.Provider

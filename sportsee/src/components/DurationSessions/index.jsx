@@ -25,8 +25,7 @@ const getDay = (indexDay) => {
 /** @function for showing duration session to line chart
  *
  * @component
- * @param {number} userId
- * @return  (<DurationSessions/>)
+ * @return (<DurationSessions/>)
  */
 
 const DurationSessions = () => {

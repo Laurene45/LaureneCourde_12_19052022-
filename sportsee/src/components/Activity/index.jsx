@@ -40,8 +40,7 @@ const getDayNumber = (date) => {
 
 /** @function for showing to bar chart activity
  *
- *@component
- * @param {number} userId
+ * @component
  * @returns (bar chart <Activity/>)
  */
 

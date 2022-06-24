@@ -5,7 +5,7 @@ import { UserContext } from '../../utils/ApiContext';
 /** @function  for showing score to pie chat
  *
  * @component
- * @returns( <Score/>)
+ * @returns (<Score/>)
  */
 
 const Score = () => {

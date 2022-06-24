@@ -11,7 +11,6 @@ import PropTypes from 'prop-types';
  *
  * @component
  * @param UserContext
- * @param {number} userId
  * @returns (<Dashboard/>)
  */
 

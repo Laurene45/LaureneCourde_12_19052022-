@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ReactComponent as YogaIcon } from '../../assets/YogaIcon.svg';
 import { ReactComponent as SwimIcon } from '../../assets/SwimIcon.svg';
 import { ReactComponent as BodyBuildIcon } from '../../assets/BodyBuildIcon.svg';

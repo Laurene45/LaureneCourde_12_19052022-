@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 /** @function informations
  *
  * @component
- * @param {element}  icon svg
+ * @param {element} icon svg
  * @param {number} value
  * @param {string} title
  * @param {string} unit
  * @returns (<Informations/>)
  */
 
-// Prends en compte l'icône et le nombre affiché + titre en dessous
 const Informations = ({ value, title, icon, unit }) => {
   return (
     <div className="information">
