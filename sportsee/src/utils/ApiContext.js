@@ -44,6 +44,7 @@ export const UserProvider = ({ children }) => {
 
   // load data
   useEffect(() => {
+    // Promesse renvoyant résultat. Utilisé pour traitement asynchrone
     Promise.all([
       loadUserInfo(),
       loadActivity(),
@@ -52,7 +53,8 @@ export const UserProvider = ({ children }) => {
       loadScore(),
     ])
 
-      // show data
+      // show data 
+      // renvoie 2 arguments : echec ou résolu
       .then((data) => {
         const userInfo = data[0];
         const userActivity = data[1];
@@ -80,11 +82,13 @@ export const UserProvider = ({ children }) => {
         setUserScore(userScore.data || userInfo.score || userInfo.todayScore);
       })
 
+      // renvoie une erreur que si la promesse est rejetée
       .catch((error) => {
         console.log(error);
         setError(error);
       })
 
+      //exécute du code une fois que la promesse a été traitée, quel que soit le résultat. 
       .finally(() => {
         setIsLoading(false);
       });
