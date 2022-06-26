@@ -69,7 +69,7 @@ const DurationSessions = () => {
         <Tooltip
           content={(pointInfo) => {
             if (!pointInfo.active) return null;
-            const pointData = data.find((x) => x.day === pointInfo.label);
+            const pointData = userDurationSession.find((x) => x.day === pointInfo.label);
 
             return <div className="tool">{pointData.sessionLength} min</div>;
           }}
